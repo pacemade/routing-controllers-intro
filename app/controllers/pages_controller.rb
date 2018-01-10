@@ -4,4 +4,8 @@ class PagesController < ApplicationController
     render :welcome
   end
 
+  def contest
+    render :contest
+  end
+
 end
