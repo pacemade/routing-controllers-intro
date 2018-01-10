@@ -23,4 +23,13 @@ class PagesController < ApplicationController
     @kitten_url = "http://lorempixel.com/#{requested_size}/#{requested_size}/cats"
   end
 
+  def secrets
+    if params[:magic_word] == "secret"
+      render :secrets
+    else
+      redirect_to "/welcome"
+      flash[:alert] = "Sorry, you're not authorized to see that page!"
+    end
+  end
+
 end
